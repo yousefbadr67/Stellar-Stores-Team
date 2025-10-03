@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Stories: Space Weather Through the Eyes of Earthlings</title>
+    <link rel="stylesheet" href="stellar-stories.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="sun-loader">
+                <div class="sun-core"></div>
+                <div class="solar-flare flare-1"></div>
+                <div class="solar-flare flare-2"></div>
+                <div class="solar-flare flare-3"></div>
+            </div>
+            <h2>Stellar Stories</h2>
+            <p>Preparing Flare's Journey...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🌟 Stellar Crew</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#story" class="nav-link">Story</a>
+                <a href="#interactive" class="nav-link">Interactive</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="stars"></div>
+            <div class="sun-hero">
+                <div class="sun-surface"></div>
+                <div class="solar-activity"></div>
+            </div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Stellar Stories</span><br>
+                    Space Weather Through the Eyes of Earthlings
+                </h1>
+                <p class="hero-description">
+                    Join Flare, a curious solar flare, on an epic journey from the Sun to Earth. 
+                    Discover how space weather affects your daily life through interactive storytelling 
+                    and engaging science education.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="startJourney()">
+                        <i class="fas fa-rocket"></i> Start Flare's Journey
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('about')">
+                        <i class="fas fa-info-circle"></i> Learn More
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>93M</h3>
+                        <p>Miles Journeyed</p>
+                    </div>
+                    <div class="stat">
+                        <h3>8min</h3>
+                        <p>Light Travel Time</p>
+                    </div>
+                    <div class="stat">
+                        <h3>6</h3>
+                        <p>Epic Scenes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-character">
+                <div class="flare-character" id="flare-hero">
+                    <div class="flare-body"></div>
+                    <div class="flare-face">
+                        <div class="eye left-eye"></div>
+                        <div class="eye right-eye"></div>
+                        <div class="mouth"></div>
+                    </div>
+                    <div class="flare-energy"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Timeline -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Flare's Epic Journey</h2>
+                <p>Follow Flare from birth on the Sun to impact on Earth</p>
+            </div>
+            
+            <!-- Timeline Navigation -->
+            <div class="timeline-nav">
+                <div class="timeline-track">
+                    <div class="timeline-progress" id="timeline-progress"></div>
+                    <div class="timeline-dots">
+                        <div class="timeline-dot active" data-scene="1">
+                            <span class="dot-number">1</span>
+                            <span class="dot-label">Birth</span>
+                        </div>
+                        <div class="timeline-dot" data-scene="2">
+                            <span class="dot-number">2</span>
+                            <span class="dot-label">Journey</span>
+                        </div>
+                        <div class="timeline-dot" data-scene="3">
+                            <span class="dot-number">3</span>
+                            <span class="dot-label">Encounter</span>
+                        </div>
+                        <div class="timeline-dot" data-scene="4">
+                            <span class="dot-number">4</span>
+                            <span class="dot-label">Impact</span>
+                        </div>
+                        <div class="timeline-dot" data-scene="5">
+                            <span class="dot-number">5</span>
+                            <span class="dot-label">Connection</span>
+                        </div>
+                        <div class="timeline-dot" data-scene="6">
+                            <span class="dot-number">6</span>
+                            <span class="dot-label">Reflection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story Scenes -->
+            <div class="story-scenes">
+                <!-- Scene 1: Birth of Flare -->
+                <div class="scene active" id="scene-1">
+                    <div class="scene-content">
+                        <div class="scene-visual">
+                            <div class="sun-scene">
+                                <div class="sun-surface-scene">
+                                    <div class="sunspot sunspot-1"></div>
+                                    <div class="sunspot sunspot-2"></div>
+                                    <div class="magnetic-field"></div>
+                                </div>
+                                <div class="flare-birth" id="flare-birth">
+                                    <div class="flare-particle"></div>
+                                    <div class="flare-particle"></div>
+                                    <div class="flare-particle"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scene-text">
+                            <h3>The Birth of Flare</h3>
+                            <div class="character-speech">
+                                <div class="speech-bubble">
+                                    <p>"Hi there! I'm Flare, and I'm about to take you on the most incredible journey of my life - from my birth on the Sun to my dramatic arrival at Earth. Are you ready for an adventure that spans 93 million miles?"</p>
+                                </div>
+                            </div>
+                            <p class="scene-description">
+                                Deep within the Sun's corona, magnetic field lines get twisted and snap, releasing incredible energy. 
+                                This is how solar flares like Flare are born - with enough energy to power millions of cities!
+                            </p>
+                            <div class="scene-facts">
+                                <div class="fact-card">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>Energy: 10²⁵ Joules</span>
+                                </div>
+                                <div class="fact-card">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Speed: 299,792,458 m/s</span>
+                                </div>
+                                <div class="fact-card">
+                                    <i class="fas fa-thermometer-full"></i>
+                                    <span>Temperature: 10,000,000°C</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scene 2: Journey Through Space -->
+                <div class="scene" id="scene-2">
+                    <div class="scene-content">
+                        <div class="scene-visual">
+                            <div class="space-journey">
+                                <div class="planet mercury"></div>
+                                <div class="planet venus"></div>
+                                <div class="planet earth-journey"></div>
+                                <div class="flare-traveling" id="flare-traveling">
+                                    <div class="travel-trail"></div>
+                                </div>
+                                <div class="stars-background"></div>
+                            </div>
+                        </div>
+                        <div class="scene-text">
+                            <h3>Journey Through Space</h3>
+                            <div class="character-speech">
+                                <div class="speech-bubble">
+                                    <p>"As I raced through space at the speed of light, I encountered the other planets. Mercury got hit pretty hard by my radiation, but Earth... Earth was special. It has something amazing - a magnetic field!"</p>
+                                </div>
+                            </div>
+                            <p class="scene-description">
+                                Flare travels through the solar system, encountering different planets. Earth's magnetic field 
+                                creates an invisible shield that protects life and makes the planet unique in our solar system.
+                            </p>
+                            <div class="interactive-planets">
+                                <div class="planet-info" data-planet="mercury">
+                                    <div class="planet-icon">☿</div>
+                                    <span>Mercury</span>
+                                </div>
+                                <div class="planet-info" data-planet="venus">
+                                    <div class="planet-icon">♀</div>
+                                    <span>Venus</span>
+                                </div>
+                                <div class="planet-info" data-planet="earth">
+                                    <div class="planet-icon">🌍</div>
+                                    <span>Earth</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scene 3: Earth Encounter -->
+                <div class="scene" id="scene-3">
+                    <div class="scene-content">
+                        <div class="scene-visual">
+                            <div class="earth-encounter">
+                                <div class="earth-with-magnetosphere">
+                                    <div class="earth-surface"></div>
+                                    <div class="magnetosphere">
+                                        <div class="magnetic-field-lines"></div>
+                                    </div>
+                                </div>
+                                <div class="flare-particles" id="flare-particles">
+                                    <div class="particle particle-1"></div>
+                                    <div class="particle particle-2"></div>
+                                    <div class="particle particle-3"></div>
+                                    <div class="particle particle-4"></div>
+                                </div>
+                                <div class="aurora-formation" id="aurora-formation">
+                                    <div class="aurora-beam"></div>
+                                    <div class="aurora-beam"></div>
+                                    <div class="aurora-beam"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scene-text">
+                            <h3>Encounter with Earth's Defenses</h3>
+                            <div class="character-speech">
+                                <div class="speech-bubble">
+                                    <p>"When I reached Earth's magnetosphere, things got really interesting! Most of my energy was deflected around the planet, but some particles slipped through at the poles, creating the most beautiful light show - the aurora!"</p>
+                                </div>
+                            </div>
+                            <p class="scene-description">
+                                Earth's magnetosphere acts as a protective shield, deflecting most solar particles. However, 
+                                some particles follow magnetic field lines to the poles, creating the spectacular aurora displays.
+                            </p>
+                            <div class="aurora-facts">
+                                <div class="fact-card">
+                                    <i class="fas fa-palette"></i>
+                                    <span>Green: Oxygen atoms</span>
+                                </div>
+                                <div class="fact-card">
+                                    <i class="fas fa-mountain"></i>
+                                    <span>Altitude: 80-400 km</span>
+                                </div>
+                                <div class="fact-card">
+                                    <i class="fas fa-compass"></i>
+                                    <span>Polar regions only</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scene 4: Technology Impact -->
+                <div class="scene" id="scene-4">
+                    <div class="scene-content">
+                        <div class="scene-visual">
+                            <div class="tech-impact">
+                                <div class="impact-grid">
+                                    <div class="tech-item gps" data-tech="gps">
+                                        <i class="fas fa-satellite"></i>
+                                        <span>GPS</span>
+                                        <div class="impact-effect"></div>
+                                    </div>
+                                    <div class="tech-item power" data-tech="power">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>Power Grid</span>
+                                        <div class="impact-effect"></div>
+                                    </div>
+                                    <div class="tech-item radio" data-tech="radio">
+                                        <i class="fas fa-broadcast-tower"></i>
+                                        <span>Radio</span>
+                                        <div class="impact-effect"></div>
+                                    </div>
+                                    <div class="tech-item satellite" data-tech="satellite">
+                                        <i class="fas fa-satellite-dish"></i>
+                                        <span>Satellites</span>
+                                        <div class="impact-effect"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scene-text">
+                            <h3>Impact on Earth's Technology</h3>
+                            <div class="character-speech">
+                                <div class="speech-bubble">
+                                    <p>"While I'm creating beautiful auroras, I'm also causing some problems for your technology. GPS systems lose accuracy, power grids can experience overloads, and radio communications get disrupted. But I'm not trying to cause trouble!"</p>
+                                </div>
+                            </div>
+                            <p class="scene-description">
+                                Space weather affects critical infrastructure that modern society depends on. Understanding 
+                                these effects helps us prepare and protect our technology from solar storms.
+                            </p>
+                            <div class="tech-effects">
+                                <div class="effect-item">
+                                    <strong>GPS Navigation:</strong> Signal delays and positioning errors
+                                </div>
+                                <div class="effect-item">
+                                    <strong>Power Grids:</strong> Induced currents can damage transformers
+                                </div>
+                                <div class="effect-item">
+                                    <strong>Communications:</strong> Radio blackouts and satellite interference
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scene 5: Human Connection -->
+                <div class="scene" id="scene-5">
+                    <div class="scene-content">
+                        <div class="scene-visual">
+                            <div class="human-connection">
+                                <div class="earth-perspective">
+                                    <div class="ground-view">
+                                        <div class="people-watching-aurora">
+                                            <div class="person"></div>
+                                            <div class="person"></div>
+                                            <div class="person"></div>
+                                        </div>
+                                        <div class="aurora-ground-view"></div>
+                                    </div>
+                                </div>
+                                <div class="space-perspective">
+                                    <div class="iss-station">
+                                        <div class="astronaut"></div>
+                                    </div>
+                                </div>
+                                <div class="monitoring-stations">
+                                    <div class="ground-station"></div>
+                                    <div class="satellite-monitor"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scene-text">
+                            <h3>The Human Connection</h3>
+                            <div class="character-speech">
+                                <div class="speech-bubble">
+                                    <p>"Here's what I want you to understand - I'm not trying to cause trouble! The real challenge is learning to live with space weather and preparing for it. Your scientists are constantly watching for flares like me."</p>
+                                </div>
+                            </div>
+                            <p class="scene-description">
+                                People around the world experience space weather in different ways - from beautiful auroras 
+                                to technology disruptions. Scientists and engineers work to monitor and prepare for these events.
+                            </p>
+                            <div class="preparation-methods">
+                                <div class="prep-item">
+                                    <i class="fas fa-eye"></i>
+                                    <span>24/7 Monitoring</span>
+                                </div>
+                                <div class="prep-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Protection Systems</span>
+                                </div>
+                                <div class="prep-item">
+                                    <i class="fas fa-route"></i>
+                                    <span>Contingency Plans</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scene 6: Reflection -->
+                <div class="scene" id="scene-6">
+                    <div class="scene-content">
+                        <div class="scene-visual">
+                            <div class="reflection-scene">
+                                <div class="earth-reflection">
+                                    <div class="earth-globe"></div>
+                                    <div class="connection-lines"></div>
+                                </div>
+                                <div class="flare-reflection" id="flare-reflection">
+                                    <div class="reflection-trail"></div>
+                                </div>
+                                <div class="cosmic-background">
+                                    <div class="star-field"></div>
+                                    <div class="nebula"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scene-text">
+                            <h3>Reflection and Understanding</h3>
+                            <div class="character-speech">
+                                <div class="speech-bubble">
+                                    <p>"As I continue my journey beyond Earth, I realize something important. Space weather isn't just a scientific curiosity - it's a reality that connects all of us. Understanding space weather helps you understand your planet better."</p>
+                                </div>
+                            </div>
+                            <p class="scene-description">
+                                Space weather connects us all through the Sun's influence. From auroras to power grids, 
+                                understanding these phenomena helps us appreciate our place in the universe and prepare for the future.
+                            </p>
+                            <div class="final-message">
+                                <h4>Ready for a Quiz?</h4>
+                                <p>Test your knowledge about space weather and Flare's journey!</p>
+                                <button class="btn btn-primary" onclick="startQuiz()">
+                                    <i class="fas fa-brain"></i> Take Quiz
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quiz Section -->
+    <section id="interactive" class="quiz-section">
+        <div class="container">
+            <div class="quiz-container" id="quiz-container">
+                <div class="quiz-header">
+                    <h2>Space Weather Quiz</h2>
+                    <p>Test your knowledge about Flare's journey and space weather!</p>
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="quiz-progress"></div>
+                        </div>
+                        <span class="progress-text" id="quiz-progress-text">Question 1 of 5</span>
+                    </div>
+                </div>
+                
+                <div class="quiz-content" id="quiz-content">
+                    <div class="question-container" id="question-container">
+                        <h3 class="question-text" id="question-text">Loading question...</h3>
+                        <div class="answers-container" id="answers-container">
+                            <!-- Answers will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-results" id="quiz-results" style="display: none;">
+                    <div class="results-content">
+                        <div class="results-score" id="results-score">
+                            <div class="score-circle">
+                                <span class="score-number" id="score-number">0</span>
+                                <span class="score-total">/5</span>
+                            </div>
+                        </div>
+                        <h3 id="results-title">Great Job!</h3>
+                        <p id="results-message">You've learned a lot about space weather!</p>
+                        <div class="results-actions">
+                            <button class="btn btn-primary" onclick="retakeQuiz()">
+                                <i class="fas fa-redo"></i> Retake Quiz
+                            </button>
+                            <button class="btn btn-secondary" onclick="scrollToSection('story')">
+                                <i class="fas fa-book"></i> Review Story
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Stellar Stories</h2>
+                    <p>
+                        Created by <strong>Stellar Crew</strong> for the NASA Space Apps Challenge 2025, 
+                        "Stellar Stories: Space Weather Through the Eyes of Earthlings" transforms complex 
+                        space weather science into an engaging, interactive learning experience.
+                    </p>
+                    <p>
+                        Our mission is to make space weather education accessible and memorable for teens and Gen Z, 
+                        helping them understand how solar phenomena affect their daily lives and technology.
+                    </p>
+                    
+                    <div class="team-roles">
+                        <h3>Team Stellar Crew</h3>
+                        <div class="roles-grid">
+                            <div class="role-card">
+                                <i class="fas fa-search"></i>
+                                <h4>Research Lead</h4>
+                                <p>Space Weather Specialist</p>
+                            </div>
+                            <div class="role-card">
+                                <i class="fas fa-paint-brush"></i>
+                                <h4>Creative Director</h4>
+                                <p>Story & Visual Design</p>
+                            </div>
+                            <div class="role-card">
+                                <i class="fas fa-code"></i>
+                                <h4>Technical Lead</h4>
+                                <p>Interactive Development</p>
+                            </div>
+                            <div class="role-card">
+                                <i class="fas fa-users"></i>
+                                <h4>Team Lead</h4>
+                                <p>Project Coordination</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="educational-impact">
+                        <h3>Educational Impact</h3>
+                        <div class="impact-stats">
+                            <div class="impact-stat">
+                                <h4>Interactive Learning</h4>
+                                <p>Engaging storytelling with hands-on exploration</p>
+                            </div>
+                            <div class="impact-stat">
+                                <h4>Scientific Accuracy</h4>
+                                <p>Verified by NASA, NOAA, and UCAR sources</p>
+                            </div>
+                            <div class="impact-stat">
+                                <h4>Modern Technology</h4>
+                                <p>Responsive design for all devices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="visual-elements">
+                        <div class="sun-about"></div>
+                        <div class="earth-about"></div>
+                        <div class="connection-about"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌟 Stellar Crew</h3>
+                    <p>NASA Space Apps Challenge 2025</p>
+                    <p>Making space weather education accessible and engaging for everyone.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://www.nasa.gov/spaceweather" target="_blank">NASA Space Weather</a></li>
+                        <li><a href="https://www.swpc.noaa.gov/" target="_blank">NOAA Space Weather</a></li>
+                        <li><a href="https://www.ucar.edu/learn/space-weather" target="_blank">UCAR Education</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Story</h4>
+                    <ul>
+                        <li><a href="#story">Flare's Journey</a></li>
+                        <li><a href="#interactive">Interactive Quiz</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Stellar Crew - NASA Space Apps Challenge. Educational project for space weather awareness.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hotspot Information Panel -->
+    <div class="hotspot-panel" id="hotspot-panel">
+        <div class="panel-header">
+            <h4 id="hotspot-title">Solar Flare Facts</h4>
+            <button class="close-panel" onclick="closeHotspot()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content" id="hotspot-content">
+            <p>Click on interactive elements to learn more!</p>
+        </div>
+    </div>
+
+    <script src="stellar-stories.js"></script>
+</body>
+</html>
